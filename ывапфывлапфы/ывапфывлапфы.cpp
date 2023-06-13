@@ -268,5 +268,5 @@ void main() {
 	go_around(x, y, outerspace);
 
 
-
+	cout << "si";
 }
