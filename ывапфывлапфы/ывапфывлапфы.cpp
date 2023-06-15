@@ -200,22 +200,6 @@ void formspace(vector < vector < char>>& outerspace, int x, int y)
 				}
 			}
 		}
-		if (i == y)
-		{
-			for (size_t j = 0; j < outerspace.size(); j++)
-			{
-				if (j == x - 1)
-				{
-					outerspace[i][j] = '█';
-				}
-				if (j == x)
-				{
-					outerspace[i][j] = '█';
-				}
-				if (j == x + 1)
-				{
-					outerspace[i][j] = '█';
-				}
 
 			}
 		}
