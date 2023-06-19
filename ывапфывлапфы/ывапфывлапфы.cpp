@@ -7,12 +7,14 @@
 
 using namespace std;
 
-
 HANDLE hand = GetStdHandle(STD_OUTPUT_HANDLE);
+int x = 41;
+int y = 42;
 
-void formspace(vector < vector < char>>& outerspace, int x, int y)
+void formspace(vector < vector < char>> outerspace)
 {
-	for (size_t i = 0; i < 120; i++)
+	SetConsoleTextAttribute(hand, 15);
+	for (size_t i = 0; i < 80; i++)
 	{
 		vector <char> test2;
 		for (size_t j = 0; j < 120; j++)
@@ -22,6 +24,7 @@ void formspace(vector < vector < char>>& outerspace, int x, int y)
 		}
 		outerspace.push_back(test2);
 	}
+	SetConsoleTextAttribute(hand, 6);
 	for (size_t i = 0; i < outerspace.size(); i++)
 	{
 		if (i == 40)
@@ -188,69 +191,123 @@ void formspace(vector < vector < char>>& outerspace, int x, int y)
 			}
 		}
 	}
+	SetConsoleTextAttribute(hand, 3);
 	for (size_t i = 0; i < outerspace.size(); i++)
 	{
-		if (i == y - 1)
+		for (size_t j = 0; j < outerspace[i].size(); j++)
 		{
-			for (size_t j = 0; j < outerspace.size(); j++)
+			if (i == y && j == x)
 			{
-				if (j == x)
-				{
-					outerspace[i][j] = '█';
-				}
-			}
-		}
-
-			}
-		}
-		if (i == y + 1)
-		{
-			for (size_t j = 0; j < outerspace.size(); j++)
-			{
-				if (j == x)
-				{
-					outerspace[i][j] = '█';
-				}
+				outerspace[i][j] = '█';
 			}
 		}
 	}
-	for (size_t i = 0; i < 120; i++)
+	SetConsoleTextAttribute(hand, 15);
+	for (size_t i = 0; i < 80; i++)
 	{
 
 		for (size_t j = 0; j < 120; j++)
 		{
 			cout << outerspace[i][j];
 		}
-
 	}
 }
 
-void go_around(int& x, int& y, vector < vector < char>>& outerspace)
+void go_around(vector < vector < char>> outerspace)
 {
 	while (true)
 	{
-		formspace(outerspace, x, y);
+		formspace(outerspace);
 		Sleep(10000);
 		system("cls");
 		y -= 1;
-
+		if (y == 38)
+		{
+			for (size_t i = 0; i < 5; i++)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				y -= 1;
+				x += 1;
+			}
+		}
+		if (y == 33)
+		{
+			while (x != 71)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				x += 1;
+			}
+		}
+		if (x == 71)
+		{
+			for (size_t i = 0; i < 5; i++)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				y += 1;
+				x += 1;
+			}
+		}
+		if (x == 76)
+		{
+			while (y != 46)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				y += 1;
+			}
+		}
+		if (y == 46)
+		{
+			for (size_t i = 0; i < 5; i++)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				y += 1;
+				x -= 1;
+			}
+		}
+		if (x == 71)
+		{
+			while(x != 46)
+			formspace(outerspace);
+			Sleep(10000);
+			system("cls");
+			x -= 1;
+		}
+		if (x == 46)
+		{
+			for (size_t i = 0; i < 5; i++)
+			{
+				formspace(outerspace);
+				Sleep(10000);
+				system("cls");
+				y -= 1;
+				x -= 1;
+			}
+		}
+		while (y!=42)
+		{
+			formspace(outerspace);
+			Sleep(10000);
+			system("cls");
+			y -= 1;
+		}
 	}
-}
-void solarsys()
-{
 
 }
 
 void main() {
 	vector < vector < char>> outerspace;
-	int x = 41;
-	int y = 42;
 	system("mode con cols=120 lines=120");
 	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
-	SetConsoleTextAttribute(hand, 15);
-	go_around(x, y, outerspace);
-
-
-	cout << "si";
+	go_around(outerspace);
 }
