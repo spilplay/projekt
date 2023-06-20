@@ -217,19 +217,23 @@ void go_around(vector < vector < char>> outerspace)
 {
 	while (true)
 	{
-		formspace(outerspace);
-		Sleep(10000);
-		system("cls");
-		y -= 1;
+		
+		while (y != 38)
+		{
+			formspace(outerspace);
+			Sleep(5000);
+			system("cls");
+			y -= 1;
+		}
 		if (y == 38)
 		{
 			for (size_t i = 0; i < 5; i++)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
-				y -= 1;
 				x += 1;
+				y -= 1;
 			}
 		}
 		if (y == 33)
@@ -237,7 +241,7 @@ void go_around(vector < vector < char>> outerspace)
 			while (x != 71)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
 				x += 1;
 			}
@@ -247,7 +251,7 @@ void go_around(vector < vector < char>> outerspace)
 			for (size_t i = 0; i < 5; i++)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
 				y += 1;
 				x += 1;
@@ -258,7 +262,7 @@ void go_around(vector < vector < char>> outerspace)
 			while (y != 46)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
 				y += 1;
 			}
@@ -268,7 +272,7 @@ void go_around(vector < vector < char>> outerspace)
 			for (size_t i = 0; i < 5; i++)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
 				y += 1;
 				x -= 1;
@@ -278,7 +282,7 @@ void go_around(vector < vector < char>> outerspace)
 		{
 			while(x != 46)
 			formspace(outerspace);
-			Sleep(10000);
+			Sleep(5000);
 			system("cls");
 			x -= 1;
 		}
@@ -287,7 +291,7 @@ void go_around(vector < vector < char>> outerspace)
 			for (size_t i = 0; i < 5; i++)
 			{
 				formspace(outerspace);
-				Sleep(10000);
+				Sleep(5000);
 				system("cls");
 				y -= 1;
 				x -= 1;
@@ -296,7 +300,7 @@ void go_around(vector < vector < char>> outerspace)
 		while (y!=42)
 		{
 			formspace(outerspace);
-			Sleep(10000);
+			Sleep(5000);
 			system("cls");
 			y -= 1;
 		}
