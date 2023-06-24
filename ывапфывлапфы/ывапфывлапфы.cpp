@@ -11,6 +11,27 @@ HANDLE hand = GetStdHandle(STD_OUTPUT_HANDLE);
 int x = 41;
 int y = 42;
 
+enum ConsoleColor
+{
+	Black = 0,
+	Blue = 1,
+	Green = 2,
+	Cyan = 3,
+	Red = 4,
+	Magenta = 5,
+	Brown = 6,
+	LightGray = 7, 
+    DarkGray = 8,
+	LightBlue = 9,
+	LightGreen = 10,
+	LightCyan = 11,
+	LightRed = 12,
+	LightMagenta = 13,
+	Yellow = 14,
+	White = 15
+};
+
+
 void formspace(vector < vector < char>> outerspace)
 {
 	SetConsoleTextAttribute(hand, 15);
@@ -24,26 +45,27 @@ void formspace(vector < vector < char>> outerspace)
 		}
 		outerspace.push_back(test2);
 	}
-	SetConsoleTextAttribute(hand, 6);
+	
 	for (size_t i = 0; i < outerspace.size(); i++)
 	{
 		if (i == 40)
 		{
+			SetConsoleTextAttribute(hand, 6);
 			for (size_t j = 0; j < outerspace.size(); j++)
 			{
 				switch (j)
 				{
 
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
 					break;
 				default:
@@ -58,19 +80,19 @@ void formspace(vector < vector < char>> outerspace)
 				switch (j)
 				{
 				case 59:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 66:
 					break;
 				default:
@@ -85,23 +107,23 @@ void formspace(vector < vector < char>> outerspace)
 				switch (j)
 				{
 				case 58:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 59:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 66:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 67:
 					break;
 				default:
@@ -116,23 +138,23 @@ void formspace(vector < vector < char>> outerspace)
 				switch (j)
 				{
 				case 58:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 59:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 66:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 67:
 					break;
 				default:
@@ -147,19 +169,19 @@ void formspace(vector < vector < char>> outerspace)
 				switch (j)
 				{
 				case 59:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 66:
 					break;
 				default:
@@ -174,15 +196,15 @@ void formspace(vector < vector < char>> outerspace)
 				switch (j)
 				{
 				case 60:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 61:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 62:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 63:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 64:
-					outerspace[i][j] = '█';
+					outerspace[i][j] = '0';
 				case 65:
 					break;
 				default:
@@ -191,14 +213,14 @@ void formspace(vector < vector < char>> outerspace)
 			}
 		}
 	}
-	SetConsoleTextAttribute(hand, 3);
+	
 	for (size_t i = 0; i < outerspace.size(); i++)
 	{
 		for (size_t j = 0; j < outerspace[i].size(); j++)
 		{
 			if (i == y && j == x)
 			{
-				outerspace[i][j] = '█';
+				outerspace[i][j] = '@';
 			}
 		}
 	}
@@ -208,7 +230,18 @@ void formspace(vector < vector < char>> outerspace)
 
 		for (size_t j = 0; j < 120; j++)
 		{
-			cout << outerspace[i][j];
+
+			
+			if (i == y && j == x)
+			{
+				SetConsoleTextAttribute(hand, LightBlue);
+				cout << outerspace[i][j];
+			}
+			else
+			{
+				SetConsoleTextAttribute(hand, White);
+				cout << outerspace[i][j];
+			}
 		}
 	}
 }
